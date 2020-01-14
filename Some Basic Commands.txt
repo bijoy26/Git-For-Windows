@@ -1,0 +1,137 @@
+VI Editor Shortcuts :
+
+VI <filename>	//opens file in VI editor 
+	1. 'Q' - Get back into main console
+	2. 'I' - Goes into INSERT mode in LESS editor
+	3. ':q' -Back to main console from LESS without saving changes
+	4. ':x' -Back to main console from LESS with saving changes 
+	 
+
+GIT BASH COMMANDS:
+
+<SHIFT>+<INSERT>  - paste text
+
+pwd 	 //print working directory(current directory)
+cd <path> 	//change directory to <path>
+cd /     // goto git bash folder
+cd / (CMD) // goto root drive
+cd	 // goto home directory
+ls     	 //list directory items 
+ls -l    // list items with more description
+ls -al     // list items with hidden folders
+dir (CMD)   //does the same as ls 
+dir *.txt (CMD)  // shows all .txt files
+
+
+dir /a (CMD) //same
+clear		//clears screen
+cls (CMD)	//same
+exit
+
+which <command-name>     // shows the command's residing directory
+which ls		//show 'ls command''s directory
+where <command-name>  (CMD)  //same as which
+where notepad  (CMD)  //same as which
+help		// information about 'help'  provided by git hash
+help cd   // help about 'cd command'
+unzip "filename"   //unzips the zipped file
+
+cat <file-name>			//print file-name contents
+cat ~/.gitconfig   // prints contents of .gitconfig located at user home directory
+less <file-name>		//print file-name contents (with a lot of text) in less 
+mkdir <folder-name>  	//make directory
+rmdir <folder-name>  	//remove directory
+
+rm <file-name>		//removes file
+rm -rf <file-name>	//removes file recursively(-r) and by force(-f)
+
+cp <source-file-name> <destination-file-name>	 //copies source file contents into destination file 	
+mv <file-name> <new-name/new-directory>		// moves file/ rename file
+
+touch <file-name>	//make file
+echo "String"		//prints Strings 
+echo "String" > demo.txt    // writes/replaces 'String' into demo.txt
+echo "String" >> demo.txt    // Appends 'String' into demo.txt
+
+
+
+git version  // shows current git version
+
+git help  	// for git commands help
+git help -a 	//for listing git subcommands
+git help config  //for git configuration manual
+
+git config --global user.name "Anjum Rashid"   //saves username in global config file(system user level)
+git config --global user.email "anjum.bijoy@gmail.com" 	//saves email in global config file
+git config --global core.editor notepad 	// sets notepad as editor in global config file
+git config --global core.editor "atom --wait"   //sets atom as editor and waits for git use it as commit message editor
+git config --global alias.<Alias-Name> "<Git-Command>"   // Assigns an user defined alias for the git command specified in the string
+git config --global alias.hist "log --oneline --all --decorate --graph"	//Assigns 'Git hist' command for 'Git log --online .....'command
+git config --global --list  // list all the config setting in user level
+git config --global -e	     // opens up the config file in default editor
+
+
+git init <repo-name>		// initiates an empty repo locally
+git init .		// Adds source control (initiates repo)on current folder 
+git clone <https-repo-link/SSH-link>	// copies the repo contents in current local directory
+git add <file-name>		//adds untracked/tracked file changes to staging area
+git add . Or git add -A		//recursively add all untracked files and folders
+git commit -m "MESSAGE"  // commits staged file changes into git repo with "MESSAGE" inline
+git commit -am "MESSAGE"  // -a is for both add and commit at the same time
+
+
+git remote		//shows name of the remote reference
+git remote -v 		//shows which remote repo is configured (remote repo reference is called origin)
+git remote show <REMOTE-REF>  		//shows detailed info about remote reference
+git remote show origin			//shows detailed info about origin reference
+git remote add <REMOTE-REF> <HTTPS-LINK/SSH-LINK>  	   // adds a remote ref (origin) to local repo to connect remote repo	
+git remote rm <REMOTE-REF>		// removes remote ref (for shifting from remote HTTPS to SSH)
+git remote rm origin 		// removes remote ref 'origin'
+
+git push <remote-repo> <branch>   
+git push origin master 		//push to remote master branch of origin reference
+git push -u origin master       // push and sets up a tracking relationship of local and remote repo on master branch
+git push 			// pushes to origin master by default if first time previous command is executed
+
+git mv <File-name> <New-Filename>	// renames File-name (Git is case sensitive, Windows is insensitive)
+
+git status			//current state(branch) of git repository 
+git log				// shows commit history
+git log -- <File-name>		// shows commit history of only the specified file
+git log --follow -- <File-name>		// shows specific commit history with rename commits(file deletion+addition)
+git log --oneline --all --decorate --graph    // displays ALL committs, each in ONE LINE , with DECORATIONS(referebce names), In GRAPH format
+
+git reset HEAD -- <File-Name>	// untracks the file from working directory
+git checkout -- <File-Name>	// Reverts File back to last commited version
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using git keygen of RSA type,4096 bit length and Comment(email) enabled
+ssh -T git@github.com       //tests connection of ssh key with github (git@github.com is generic username of github)
+
+
+ATOM COMMANDS:
+
+atom .    	 //opens up current file directory in atom
+atom foldername     	//opens up current folder directory and subfiles in atom
+atom folder1name folder2name 	    //opens up 2 folder directory at the tree view in atom
+atom filename      	 // opens up filename in atom 
+
+
+CHANGE ALIAS IN BASH:
+
+Goto User Home Directory -> Create '.bash_profile' file > Add following commands
+
+alias <Alias-Name>='<Bash-Command>'	//replace alias name with bash command
+alias ll='ls -al'
+alias ghist='git hist'	// hist is an alias already configured in git environment
+
+Save and restart git
+
+
+IGNORE UNWANTED FILES IN REPO:
+
+Create .gitignore on project directory > Add following lines-
+
+<FILE-NAME>		//ignores file-name on repo
+<FILE-DIRECTORY>	//ignore the specified folder 
+app.log		// ignores app.log file
+*.log		//ignores all .log files
