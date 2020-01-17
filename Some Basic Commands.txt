@@ -67,6 +67,16 @@ git config --global core.editor notepad 	// sets notepad as editor in global con
 git config --global core.editor "atom --wait"   //sets atom as editor and waits for git use it as commit message editor
 git config --global alias.<Alias-Name> "<Git-Command>"   // Assigns an user defined alias for the git command specified in the string
 git config --global alias.hist "log --oneline --all --decorate --graph"	//Assigns 'Git hist' command for 'Git log --online .....'command
+
+git config --global diff.tool <Tool-Name>	// names Git Diff tool 'Tool-Name'
+git config --global diff.tool p4merge	// registers Git Diff tool name 'p4merge'
+git config --global merge.tool p4merge	// registers Git Merge tool name 'p4merge'
+git config --global difftool.p4merge.path <EXE-PATH>  // sets Git Diff tool path to <EXE-PATH> for p4merge
+git config --global mergetool.p4merge.path <EXE-PATH>  // sets Git Merge tool path to <EXE-PATH> for p4merge
+git config --global difftool.p4merge.path <C:/Program Files/Perforce/p4merge.exe>  // sets Git Diff tool path to <EXE-PATH> for p4merge
+git config --global difftool.prompt false 	// disables prompt for 3rd party tool p4marge
+git config --global mergetool.prompt false 	// disables prompt for 3rd party tool p4marge
+
 git config --global --list  // list all the config setting in user level
 git config --global -e	     // opens up the config file in default editor
 
