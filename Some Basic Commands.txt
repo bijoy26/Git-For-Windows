@@ -114,6 +114,14 @@ git log --oneline --all --decorate --graph    // displays ALL committs, each in 
 git reset HEAD -- <File-Name>	// untracks the file from working directory
 git checkout -- <File-Name>	// Reverts File back to last commited version
 
+git diff	   	// prints the comparison of Working Directory and Staging Area using Git Diff Tool
+git diff HEAD   	//  prints the comparison of Working Directory and Last Commit (HEAD means last commit of current batch)
+git diff --cached HEAD 	//  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
+
+git difftool		// prints the comparison of Working Directory and Staging Area using p4merge tool
+git difftool HEAD 			// same
+git difftool --cached HEAD 		// same
+
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using git keygen of RSA type,4096 bit length and Comment(email) enabled
 ssh -T git@github.com       //tests connection of ssh key with github (git@github.com is generic username of github)
 
