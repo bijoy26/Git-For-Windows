@@ -98,10 +98,14 @@ git remote add <REMOTE-REF> <HTTPS-LINK/SSH-LINK>  	   // adds a remote ref (ori
 git remote rm <REMOTE-REF>		// removes remote ref (for shifting from remote HTTPS to SSH)
 git remote rm origin 		// removes remote ref 'origin'
 
+
 git push <remote-repo> <branch>   
 git push origin master 		//push to remote master branch of origin reference
 git push -u origin master       // push and sets up a tracking relationship of local and remote repo on master branch
 git push 			// pushes to origin master by default if first time previous command is executed
+
+git fetch --all 	// fetches all the changes from remote repo 
+git pull origin master 	 // fetch the changes from remote repo + merges with local repo
 
 git mv <File-name> <New-Filename>	// renames File-name (Git is case sensitive, Windows is insensitive)
 
@@ -116,11 +120,33 @@ git checkout -- <File-Name>	// Reverts File back to last commited version
 
 git diff	   	// prints the comparison of 'Working Directory' and Staging Area/Last Commit using Git Diff Tool
 git diff HEAD   	//  prints the comparison of Working Directory/Stage and Last Commit (HEAD means last commit of current batch)
+git diff HEAD~2   	//  prints the comparison of Working Directory/Stage and 2 level Previous Commit (HEAD~2 == HEAD-2) 
+git diff <COMMIT-ID-HASH>      // comparison of Working Directory and specified Commit id
+git diff <COMMIT-ID-1>..<COMMIT-ID-2>    // comparison of Commit id -1(previous) vs Commit id-2(latest)
+git diff origin/master	//  comparison of Working Directory/Stage and master branch of origin ref
+git diff <COMMIT-ID-HASH> origin/master		//  comparison of Commit-id-1 and master branch of origin ref
+
 git diff --cached HEAD 	//  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
+git diff --cached HEAD~2   //  prints the comparison of Staging Area and HEAD minus 2 commit
+git diff --cached <COMMIT-ID-HASH>  // comparision of Staging area and specified commit 
+git diff --cached origin/master	//  comparison of Staging Area and master branch of origin ref
 
 git difftool		// prints the comparison of Working Directory and Staging Area using p4merge tool
 git difftool HEAD 			// does the same as Diff
+git difftool HEAD~1 			// same
+git difftool <COMMIT-ID-HASH>		//same
+git difftool origin/master		//  same
 git difftool --cached HEAD 		// same
+git difftool --cached HEAD~2 		// same
+git difftool --cached <COMMIT-ID-HASH> 	// same
+git difftool --cached origin/master	// same
+
+git show HEAD  // comparison of HEAD(Last Commit) with its previous commit
+git show HEAD~<LEVEL>  // comparison of HEAD minus LEVEL commit with its previous commit
+git show <COMMIT-ID-HASH>  // comparison of specific commit hash with its previous commit
+
+
+git branch -a		// lists all local and remote branches
 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using git keygen of RSA type,4096 bit length and Comment(email) enabled
 ssh -T git@github.com       //tests connection of ssh key with github (git@github.com is generic username of github)
