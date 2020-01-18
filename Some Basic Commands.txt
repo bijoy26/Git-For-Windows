@@ -72,10 +72,10 @@ git config --global diff.tool <Tool-Name>	// names Git Diff tool 'Tool-Name'
 git config --global diff.tool p4merge	// registers Git Diff tool name 'p4merge'
 git config --global merge.tool p4merge	// registers Git Merge tool name 'p4merge'
 git config --global difftool.p4merge.path <EXE-PATH>  // sets Git Diff tool path to <EXE-PATH> for p4merge
-git config --global mergetool.p4merge.path <EXE-PATH>  // sets Git Merge tool path to <EXE-PATH> for p4merge
+git config --global mergetool.p4merge.path <EXE-PATH>  // does same for Merge Tool
 git config --global difftool.p4merge.path <C:/Program Files/Perforce/p4merge.exe>  // sets Git Diff tool path to <EXE-PATH> for p4merge
 git config --global difftool.prompt false 	// disables prompt for 3rd party tool p4marge
-git config --global mergetool.prompt false 	// disables prompt for 3rd party tool p4marge
+git config --global mergetool.prompt false 	// same
 
 git config --global --list  // list all the config setting in user level
 git config --global -e	     // opens up the config file in default editor
@@ -109,17 +109,17 @@ git status			//current state(branch) of git repository
 git log				// shows commit history
 git log -- <File-name>		// shows commit history of only the specified file
 git log --follow -- <File-name>		// shows specific commit history with rename commits(file deletion+addition)
-git log --oneline --all --decorate --graph    // displays ALL committs, each in ONE LINE , with DECORATIONS(referebce names), In GRAPH format
+git log --oneline --all --decorate --graph    // displays ALL committs, each in ONE LINE , with DECORATIONS(reference names), In GRAPH format
 
 git reset HEAD -- <File-Name>	// untracks the file from working directory
 git checkout -- <File-Name>	// Reverts File back to last commited version
 
-git diff	   	// prints the comparison of Working Directory and Staging Area using Git Diff Tool
-git diff HEAD   	//  prints the comparison of Working Directory and Last Commit (HEAD means last commit of current batch)
+git diff	   	// prints the comparison of 'Working Directory' and Staging Area/Last Commit using Git Diff Tool
+git diff HEAD   	//  prints the comparison of Working Directory/Stage and Last Commit (HEAD means last commit of current batch)
 git diff --cached HEAD 	//  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
 
 git difftool		// prints the comparison of Working Directory and Staging Area using p4merge tool
-git difftool HEAD 			// same
+git difftool HEAD 			// does the same as Diff
 git difftool --cached HEAD 		// same
 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using git keygen of RSA type,4096 bit length and Comment(email) enabled
