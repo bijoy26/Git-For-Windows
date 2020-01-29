@@ -105,7 +105,7 @@ git push -u origin master       // push and sets up a tracking relationship of l
 git push 			// pushes to origin master by default if first time previous command is executed
 
 git fetch --all 	// fetches all the changes from remote repo 
-git pull origin master 	 // fetch the changes from remote repo + merges with local repo
+git pull origin master 	 // fetch the changes from remote master repo + merges with local repo
 
 git mv <File-name> <New-Filename>	// renames File-name (Git is case sensitive, Windows is insensitive)
 
@@ -118,7 +118,7 @@ git log --oneline --all --decorate --graph    // displays ALL committs, each in 
 git reset HEAD -- <File-Name>	// untracks the file from working directory
 git checkout -- <File-Name>	// Reverts File back to last commited version
 
-git diff	   	// prints the comparison of 'Working Directory' and Staging Area/Last Commit using Git Diff Tool
+git diff	   	// prints the comparison of 'Working Directory' and Staging Area/Last Commit using Git's Diff Tool
 git diff HEAD   	//  prints the comparison of Working Directory/Stage and Last Commit (HEAD means last commit of current batch)
 git diff HEAD~2   	//  prints the comparison of Working Directory/Stage and 2 level Previous Commit (HEAD~2 == HEAD-2) 
 git diff <COMMIT-ID-HASH>      // comparison of Working Directory and specified Commit id
