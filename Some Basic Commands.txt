@@ -113,7 +113,7 @@ git status			//current state(branch) of git repository
 git log				// shows commit history
 git log -- <File-name>		// shows commit history of only the specified file
 git log --follow -- <File-name>		// shows specific commit history with rename commits(file deletion+addition)
-git log --oneline --all --decorate --graph    // displays ALL committs, each in ONE LINE , with DECORATIONS(reference names), In GRAPH format
+git log --oneline --all --decorate --graph    // displays ALL committs, each in ONE LINE , with DECORATIONS(reference names), In GRAPH format(for merges)
 
 git reset HEAD -- <File-Name>	// untracks the file from working directory
 git checkout -- <File-Name>	// Reverts File back to last commited version
@@ -144,6 +144,8 @@ git difftool --cached HEAD~2 		// same
 git difftool --cached <COMMIT-ID-HASH> 	// same
 git difftool --cached origin/master	// same
 
+git mergetool		// launches p4merge as mergetool
+
 git show HEAD  // comparison of HEAD(Last Commit) with its previous commit
 git show HEAD~<LEVEL>  // comparison of HEAD minus LEVEL commit with its previous commit
 git show <COMMIT-ID-HASH>  // comparison of specific commit hash with its previous commit
@@ -153,12 +155,13 @@ git branch -a		// lists all local and remote branches
 git branch <BRANCH-NAME>  // Creates a new branch named <BRANCH-NAME>
 git branch -m <BRANCH-NAME-1> <BRANCH-NAME-2>  // Renames <BRANCH-NAME-1> with new name <BRANCH-NAME-2>
 
-git merge <BRANCH-NAME>    // Merges current branch with the changes of <BRANCH-NAME> branch (fast forward by default)
-git merge --no-ff <BRANCH-NAME>   // Merges current branch with the changes of <BRANCH-NAME> branch (disables fast forward to show the merge branching changes)
-
+git merge <BRANCH-NAME>   	 // Merges current branch with the changes of <BRANCH-NAME> branch (fast forward by default, will do Automatic Merge if both branch and master has individual commits)
+git merge --no-ff <BRANCH-NAME>   	// Merges current branch with the changes of <BRANCH-NAME> branch (disables fast forward to show the merge branching changes)
+git merge <BRANCH-NAME> -m <COMMIT-MSG>   // Merges current branch with the changes of <BRANCH-NAME> branch with inline commit message
+git merge --abort 		// aborts from merge conflict to its previous state 
 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using git keygen of RSA type,4096 bit length and Comment(email) enabled
-ssh -T git@github.com       //tests connection of ssh key with github (git@github.com is generic username of github)
+ssh -T git@github.com         //tests connection of ssh key with github (git@github.com is generic username of github)
 
 
 ATOM COMMANDS:
@@ -175,7 +178,7 @@ Goto User Home Directory -> Create '.bash_profile' file > Add following commands
 
 alias <Alias-Name>='<Bash-Command>'	//replace alias name with bash command
 alias ll='ls -al'
-alias ghist='git hist'	// hist is an alias already configured in git environment
+alias ghist='git hist'		// hist is an alias already configured in git environment
 
 Save and restart git
 
@@ -186,5 +189,24 @@ Create .gitignore on project directory > Add following lines-
 
 <FILE-NAME>		//ignores file-name on repo
 <FILE-DIRECTORY>	//ignore the specified folder 
-app.log		// ignores app.log file
-*.log		//ignores all .log files
+app.log			// ignores app.log file
+*.log			//ignores all .log files
+
+RESOLVING MERGE CONFLICT:
+
+Merge conflict occurs when a feature branch file and the same file in master branch has changes on similiar line.
+Available Options to resolve it -
+
+1. Open up the conflicting file to analyze the portion that has conflict (marked by Git automatically)
+
+2. (a) Use 'git merge --abort' to abort merging and modify one of the files
+		
+		-----OR-----
+   (b) 
+	(i)   Open merge tool(p4merge) using 'git mergetool' 
+        (ii)  Analyze the remote(feature),base(original) and local(master) branch to
+              modify the final 'union file' 
+	(iii) Save it, do the final git commit to resolve the conflict
+	(iv)  Either save the 'Filename.orig' file (original file before merge)
+	      automatically added by git or remove it  
+ 
