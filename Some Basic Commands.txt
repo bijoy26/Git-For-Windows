@@ -117,6 +117,8 @@ git log --oneline --all --decorate --graph    // displays ALL committs, each in 
 
 git reset HEAD -- <File-Name>	// untracks the file from working directory
 git checkout -- <File-Name>	// Reverts File back to last commited version
+git checkout <BRANCH-NAME>	// Switches to <BRANCH-NAME> branch
+git checkout -b <BRANCH-NAME>	// Create a new <BRANCH-NAME> and switches to it
 
 git diff	   	// prints the comparison of 'Working Directory' and Staging Area/Last Commit using Git's Diff Tool
 git diff HEAD   	//  prints the comparison of Working Directory/Stage and Last Commit (HEAD means last commit of current batch)
@@ -125,6 +127,7 @@ git diff <COMMIT-ID-HASH>      // comparison of Working Directory and specified 
 git diff <COMMIT-ID-1>..<COMMIT-ID-2>    // comparison of Commit id -1(previous) vs Commit id-2(latest)
 git diff origin/master	//  comparison of Working Directory/Stage and master branch of origin ref
 git diff <COMMIT-ID-HASH> origin/master		//  comparison of Commit-id-1 and master branch of origin ref
+git diff <BRANCH-1> <BRANCH-2>		// comparison of Branch-1 and Branch-2 changes
 
 git diff --cached HEAD 	//  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
 git diff --cached HEAD~2   //  prints the comparison of Staging Area and HEAD minus 2 commit
@@ -145,8 +148,14 @@ git show HEAD  // comparison of HEAD(Last Commit) with its previous commit
 git show HEAD~<LEVEL>  // comparison of HEAD minus LEVEL commit with its previous commit
 git show <COMMIT-ID-HASH>  // comparison of specific commit hash with its previous commit
 
-
+git branch		// lists current local branches
 git branch -a		// lists all local and remote branches
+git branch <BRANCH-NAME>  // Creates a new branch named <BRANCH-NAME>
+git branch -m <BRANCH-NAME-1> <BRANCH-NAME-2>  // Renames <BRANCH-NAME-1> with new name <BRANCH-NAME-2>
+
+git merge <BRANCH-NAME>    // Merges current branch with the changes of <BRANCH-NAME> branch (fast forward by default)
+git merge --no-ff <BRANCH-NAME>   // Merges current branch with the changes of <BRANCH-NAME> branch (disables fast forward to show the merge branching changes)
+
 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using git keygen of RSA type,4096 bit length and Comment(email) enabled
 ssh -T git@github.com       //tests connection of ssh key with github (git@github.com is generic username of github)
