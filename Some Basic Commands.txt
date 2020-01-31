@@ -144,7 +144,7 @@ git difftool --cached HEAD~2 		// same
 git difftool --cached <COMMIT-ID-HASH> 	// same
 git difftool --cached origin/master	// same
 
-git mergetool		// launches p4merge as mergetool
+git mergetool		// launches p4merge as mergetool when having merge conflict
 
 git show HEAD  // comparison of HEAD(Last Commit) with its previous commit
 git show HEAD~<LEVEL>  // comparison of HEAD minus LEVEL commit with its previous commit
