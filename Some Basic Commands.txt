@@ -99,8 +99,9 @@ git remote rm <REMOTE-REF>		// removes remote ref (for shifting from remote HTTP
 git remote rm origin 		// removes remote ref 'origin'
 
 
-git push <remote-repo> <branch>   
+git push <remote-repo> <branch-name>   //push to remote specified branch of origin reference    
 git push origin master 		//push to remote master branch of origin reference
+git push -u origin <branch-name>       // push and sets up a tracking relationship of local and remote repo on specified branch (for locally created new branch, a remote branch with <BRANCH-NAME> will be created and tracked)
 git push -u origin master       // push and sets up a tracking relationship of local and remote repo on master branch
 git push 			// pushes to origin master by default if first time previous command is executed
 
