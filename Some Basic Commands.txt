@@ -171,7 +171,6 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using
 ssh -T git@github.com         //tests connection of ssh key with github (git@github.com is generic username of github)
 
 
-
 git cherry-pick <COMMIT-ID1> <COMMIT-ID2> <COMMIT-ID3> ...  // picks specified commits from any other brances and appends them sequentially on the current branch
 
 git rebase <BRANCH-NAME>	// Takes all the changes from current branch and replay them on the specified branch
@@ -194,6 +193,7 @@ atom folder1name folder2name 	    //opens up 2 folder directory at the tree view
 atom filename      	 // opens up filename in atom 
 
 
+
 CHANGE ALIAS IN BASH:
 
 Goto User Home Directory -> Create '.bash_profile' file > Add following commands
@@ -205,6 +205,7 @@ alias ghist='git hist'		// hist is an alias already configured in git environmen
 Save and restart git
 
 
+
 IGNORE UNWANTED FILES IN REPO:
 
 Create .gitignore on project directory > Add following lines-
@@ -213,6 +214,8 @@ Create .gitignore on project directory > Add following lines-
 <FILE-DIRECTORY>	//ignore the specified folder 
 app.log			// ignores app.log file
 *.log			//ignores all .log files
+
+
 
 RESOLVING MERGE CONFLICT:
 
