@@ -171,6 +171,21 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using
 ssh -T git@github.com         //tests connection of ssh key with github (git@github.com is generic username of github)
 
 
+
+git cherry-pick <COMMIT-ID1> <COMMIT-ID2> <COMMIT-ID3> ...  // picks specified commits from any other brances and appends them sequentially on the current branch
+
+git rebase <BRANCH-NAME>	// Takes all the changes from current branch and replay them on the specified branch
+git rebase -i <BRANCH-DEST> <BRANCH-SOURCE>	//Moves the specified changes from source branch and replay them destination branch via interactive editor
+
+git rebase -i HEAD~3	// opens up interactive UI to pick/arrange commits from the specified range to replay current branch (interactive rebase)
+
+git tag <TAG-TITLE>   // tags lastest commit with specified title
+git tag <TAG-TITLE> <COMMIT-ID>  	// tags specified commit
+
+git describe <COMMIT-ID / BRANCH>	// shows the closed tag commit by following format : TITLE_DISTANCE_COMMIT-ID (Ex: v2_3_gC1SH)
+
+
+
 ATOM COMMANDS:
 
 atom .    	 //opens up current file directory in atom
