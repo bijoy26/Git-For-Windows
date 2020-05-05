@@ -33,7 +33,7 @@ which ls		//show 'ls command''s directory
 where <command-name>  (CMD)  //same as which
 where notepad  (CMD)  //same as which
 help		// information about 'help'  provided by git hash
-help cd   // help about 'cd command'
+help cd        // help about 'cd command'
 unzip "filename"   //unzips the zipped file
 
 cat <file-name>			//print file-name contents
@@ -69,10 +69,10 @@ git config --global alias.<Alias-Name> "<Git-Command>"   // Assigns an user defi
 git config --global alias.hist "log --oneline --all --decorate --graph"	//Assigns 'Git hist' command for 'Git log --online .....'command
 
 git config --global diff.tool <Tool-Name>	// names Git Diff tool 'Tool-Name'
-git config --global diff.tool p4merge	// registers Git Diff tool name 'p4merge'
-git config --global merge.tool p4merge	// registers Git Merge tool name 'p4merge'
-git config --global difftool.p4merge.path <EXE-PATH>  // sets Git Diff tool path to <EXE-PATH> for p4merge
-git config --global mergetool.p4merge.path <EXE-PATH>  // does same for Merge Tool
+git config --global diff.tool p4merge	    // registers Git Diff tool name 'p4merge'
+git config --global merge.tool p4merge	    // registers Git Merge tool name 'p4merge'
+git config --global difftool.p4merge.path <EXE-PATH>    // sets Git Diff tool path to <EXE-PATH> for p4merge
+git config --global mergetool.p4merge.path <EXE-PATH>   // does same for Merge Tool
 git config --global difftool.p4merge.path <C:/Program Files/Perforce/p4merge.exe>  // sets Git Diff tool path to <EXE-PATH> for p4merge
 git config --global difftool.prompt false 	// disables prompt for 3rd party tool p4marge
 git config --global mergetool.prompt false 	// same
@@ -82,12 +82,12 @@ git config --global -e	     // opens up the config file in default editor
 
 
 git init <repo-name>		// initiates an empty repo locally
-git init .		// Adds source control (initiates repo)on current folder 
+git init .		        // Adds source control (initiates repo)on current folder 
 git clone <https-repo-link/SSH-link>	// copies the repo contents in current local directory
-git add <file-name>		//adds untracked/tracked file changes to staging area
-git add . Or git add -A		//recursively add all untracked files and folders
-git commit -m "MESSAGE"  // commits staged file changes into git repo with "MESSAGE" inline
-git commit -am "MESSAGE"  // -a is for both add and commit at the same time
+git add <file-name>		   //adds untracked/tracked file changes to staging area
+git add . Or git add -A		  //recursively add all untracked files and folders
+git commit -m "MESSAGE"           // commits staged file changes into git repo with "MESSAGE" inline
+git commit -am "MESSAGE"          // -a is for both add and commit at the same time
 
 
 git remote		//shows name of the remote reference
