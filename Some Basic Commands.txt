@@ -95,6 +95,7 @@ git remote -v 		//shows which remote repo is configured (remote repo reference i
 git remote show <REMOTE-REF>  		//shows detailed info about remote reference
 git remote show origin			//shows detailed info about origin reference
 git remote add <REMOTE-REF> <HTTPS-LINK/SSH-LINK>  	   // adds a remote ref (origin) to local repo to connect remote repo	
+git remote add upstream <UPSTREAM-URL>			// adds a remote ref for the original repository so that it can sync between forked repository
 git remote rm <REMOTE-REF>		// removes remote ref (for shifting from remote HTTPS to SSH)
 git remote rm origin 		// removes remote ref 'origin'
 
@@ -106,6 +107,7 @@ git push -u origin master       // push and sets up a tracking relationship of l
 git push 			// pushes to origin master by default if first time previous command is executed
 
 git fetch --all 	// fetches all the changes from remote repo 
+git fetch upstream	// fetches the upstream(original repo) branches (requires upstream remote ref to be configured) 
 git pull origin master 	 // fetch the changes from remote master repo + merges with local repo
 
 git mv <File-name> <New-Filename>	// renames File-name (Git is case sensitive, Windows is insensitive)
@@ -161,6 +163,7 @@ git branch -a		// lists all local and remote branches
 git branch <BRANCH-NAME>  // Creates a new branch named <BRANCH-NAME>
 git branch -m <BRANCH-NAME-1> <BRANCH-NAME-2>  // Renames <BRANCH-NAME-1> with new name <BRANCH-NAME-2>
 git branch -f <BRANCH-NAME> <COMMIT-ID>    // Moves a specified branch to point to the specified commit forcefully
+git branch -u upstream/master		// sets up current local branch to track remote branch master of upstream ref (needs upstream remote to set up first)
 
 git merge <BRANCH-NAME>   	 // Merges current branch with the changes of <BRANCH-NAME> branch (fast forward by default, will do Automatic Merge if both branch and master has individual commits)
 git merge --no-ff <BRANCH-NAME>   	// Merges current branch with the changes of <BRANCH-NAME> branch (disables fast forward to show the merge branching changes)
