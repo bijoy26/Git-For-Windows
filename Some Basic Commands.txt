@@ -105,6 +105,7 @@ git push origin master 		//push to remote master branch of origin reference
 git push -u origin <branch-name>       // push and sets up a tracking relationship of local and remote repo on specified branch (for locally created new branch, a remote branch with <BRANCH-NAME> will be created and tracked)
 git push -u origin master       // push and sets up a tracking relationship of local and remote repo on master branch
 git push 			// pushes to origin master by default if first time previous command is executed
+git push origin --delete <remote-branch-name> 		//// delete branch remotely that is locally removed before
 
 git fetch --all 	// fetches all the changes from remote repo 
 git fetch upstream	// fetches the upstream(original repo) branches (requires upstream remote ref to be configured) 
@@ -164,6 +165,8 @@ git branch <BRANCH-NAME>  // Creates a new branch named <BRANCH-NAME>
 git branch -m <BRANCH-NAME-1> <BRANCH-NAME-2>  // Renames <BRANCH-NAME-1> with new name <BRANCH-NAME-2>
 git branch -f <BRANCH-NAME> <COMMIT-ID>    // Moves a specified branch to point to the specified commit forcefully
 git branch -u upstream/master		// sets up current local branch to track remote branch master of upstream ref (needs upstream remote to set up first)
+git branch -d <BRANCH-NAME> 		// delete branch locally
+
 
 git merge <BRANCH-NAME>   	 // Merges current branch with the changes of <BRANCH-NAME> branch (fast forward by default, will do Automatic Merge if both branch and master has individual commits)
 git merge --no-ff <BRANCH-NAME>   	// Merges current branch with the changes of <BRANCH-NAME> branch (disables fast forward to show the merge branching changes)
