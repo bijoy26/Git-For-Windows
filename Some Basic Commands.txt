@@ -1,26 +1,26 @@
 VI Editor Shortcuts :
 
-VI <filename>	//opens file in VI editor 
+VI <filename>	//opens file in VI editor
 	1. 'Q' - Get back into main console
 	2. 'I' - Goes into INSERT mode in LESS editor
 	3. ':q' -Back to main console from LESS without saving changes
-	4. ':x' -Back to main console from LESS with saving changes 
-	 
+	4. ':x' -Back to main console from LESS with saving changes
+
 
 GIT BASH COMMANDS:
 
 <SHIFT>+<INSERT>  - paste text
 
-pwd 	 //print working directory(current directory)
-cd <path> 	//change directory to <path>
-cd /     // goto git bash folder
-cd / (CMD) // goto root drive
-cd	 // goto home directory
-ls     	 //list directory items 
-ls -l    // list items with more description
-ls -al     // list items with hidden folders
-dir (CMD)   //does the same as ls 
-dir *.txt (CMD)  // shows all .txt files
+pwd 	 						//print working directory(current directory)
+cd <path> 				//change directory to <path>
+cd /   					  // goto git bash folder
+cd / (CMD) 				// goto root drive
+cd	 							// goto home directory
+ls    					 	 //list directory items
+ls -l   					 // list items with more description
+ls -al  				   // list items with hidden folders
+dir (CMD) 		 		 //does the same as ls
+dir *.txt (CMD) 	 // shows all .txt files
 
 
 dir /a (CMD) //same
@@ -29,27 +29,27 @@ cls (CMD)	//same
 exit
 
 which <command-name>     // shows the command's residing directory
-which ls		//show 'ls command''s directory
+which ls									//show 'ls command''s directory
 where <command-name>  (CMD)  //same as which
-where notepad  (CMD)  //same as which
-help		// information about 'help'  provided by git hash
-help cd        // help about 'cd command'
-unzip "filename"   //unzips the zipped file
+where notepad  (CMD)  				//same as which
+help											// information about 'help'  provided by git hash
+help cd      						  // help about 'cd command'
+unzip "filename"  			 //unzips the zipped file
 
 cat <file-name>			//print file-name contents
 cat ~/.gitconfig   // prints contents of .gitconfig located at user home directory
-less <file-name>		//print file-name contents (with a lot of text) in less 
+less <file-name>		//print file-name contents (with a lot of text) in less
 mkdir <folder-name>  	//make directory
 rmdir <folder-name>  	//remove directory
 
 rm <file-name>		//removes file
 rm -rf <file-name>	//removes file recursively(-r) and by force(-f)
 
-cp <source-file-name> <destination-file-name>	 //copies source file contents into destination file 	
+cp <source-file-name> <destination-file-name>	 //copies source file contents into destination file
 mv <file-name> <new-name/new-directory>		// moves file/ rename file
 
 touch <file-name>	//make file
-echo "String"		//prints Strings 
+echo "String"		//prints Strings
 echo "String" > demo.txt    // writes/replaces 'String' into demo.txt
 echo "String" >> demo.txt    // Appends 'String' into demo.txt
 
@@ -82,7 +82,7 @@ git config --global -e	     // opens up the config file in default editor
 
 
 git init <repo-name>		// initiates an empty repo locally
-git init .		        // Adds source control (initiates repo)on current folder 
+git init .		        // Adds source control (initiates repo)on current folder
 git clone <https-repo-link/SSH-link>	// copies the repo contents in current local directory
 git add <file-name>		   //adds untracked/tracked file changes to staging area
 git add . Or git add -A		  //recursively add all untracked files and folders
@@ -94,26 +94,26 @@ git remote		//shows name of the remote reference
 git remote -v 		//shows which remote repo is configured (remote repo reference is called origin)
 git remote show <REMOTE-REF>  		//shows detailed info about remote reference
 git remote show origin			//shows detailed info about origin reference
-git remote add <REMOTE-REF> <HTTPS-LINK/SSH-LINK>  	   // adds a remote ref (origin) to local repo to connect remote repo	
+git remote add <REMOTE-REF> <HTTPS-LINK/SSH-LINK>  	   // adds a remote ref (origin) to local repo to connect remote repo
 git remote add upstream <UPSTREAM-URL>			// adds a remote ref for the original repository so that it can sync between forked repository
 git remote rm <REMOTE-REF>		// removes remote ref (for shifting from remote HTTPS to SSH)
 git remote rm origin 		// removes remote ref 'origin'
 
 
-git push <remote-repo> <branch-name>   //push to remote specified branch of origin reference    
+git push <remote-repo> <branch-name>   //push to remote specified branch of origin reference
 git push origin master 		//push to remote master branch of origin reference
 git push -u origin <branch-name>       // push and sets up a tracking relationship of local and remote repo on specified branch (for locally created new branch, a remote branch with <BRANCH-NAME> will be created and tracked)
 git push -u origin master       // push and sets up a tracking relationship of local and remote repo on master branch
 git push 			// pushes to origin master by default if first time previous command is executed
 git push origin --delete <remote-branch-name> 		//// delete branch remotely that is locally removed before
 
-git fetch --all 	// fetches all the changes from remote repo 
-git fetch upstream	// fetches the upstream(original repo) branches (requires upstream remote ref to be configured) 
+git fetch --all 	// fetches all the changes from remote repo
+git fetch upstream	// fetches the upstream(original repo) branches (requires upstream remote ref to be configured)
 git pull origin master 	 // fetch the changes from remote master repo + merges with local repo
 
 git mv <File-name> <New-Filename>	// renames File-name (Git is case sensitive, Windows is insensitive)
 
-git status			//current state(branch) of git repository 
+git status			//current state(branch) of git repository
 git log				// shows commit history
 git log -- <File-name>		// shows commit history of only the specified file
 git log --follow -- <File-name>		// shows specific commit history with rename commits(file deletion+addition)
@@ -131,7 +131,7 @@ git checkout HEAD~3	        // assigns HEAD to it's 3 level upper commit
 
 git diff	   	// prints the comparison of 'Working Directory' and Staging Area/Last Commit using Git's Diff Tool
 git diff HEAD   	//  prints the comparison of Working Directory/Stage and Last Commit (HEAD means last commit of current batch)
-git diff HEAD~2   	//  prints the comparison of Working Directory/Stage and 2 level Previous Commit (HEAD~2 == HEAD-2) 
+git diff HEAD~2   	//  prints the comparison of Working Directory/Stage and 2 level Previous Commit (HEAD~2 == HEAD-2)
 git diff <COMMIT-ID-HASH>      // comparison of Working Directory and specified Commit id
 git diff <COMMIT-ID-1>..<COMMIT-ID-2>    // comparison of Commit id -1(previous) vs Commit id-2(latest)
 git diff origin/master	//  comparison of Working Directory/Stage and master branch of origin ref
@@ -140,7 +140,7 @@ git diff <BRANCH-1> <BRANCH-2>		// comparison of Branch-1 and Branch-2 changes
 
 git diff --cached HEAD 	//  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
 git diff --cached HEAD~2   //  prints the comparison of Staging Area and HEAD minus 2 commit
-git diff --cached <COMMIT-ID-HASH>  // comparision of Staging area and specified commit 
+git diff --cached <COMMIT-ID-HASH>  // comparision of Staging area and specified commit
 git diff --cached origin/master	//  comparison of Staging Area and master branch of origin ref
 
 git difftool		// prints the comparison of Working Directory and Staging Area using p4merge tool
@@ -171,7 +171,7 @@ git branch -d <BRANCH-NAME> 		// delete branch locally
 git merge <BRANCH-NAME>   	 // Merges current branch with the changes of <BRANCH-NAME> branch (fast forward by default, will do Automatic Merge if both branch and master has individual commits)
 git merge --no-ff <BRANCH-NAME>   	// Merges current branch with the changes of <BRANCH-NAME> branch (disables fast forward to show the merge branching changes)
 git merge <BRANCH-NAME> -m <COMMIT-MSG>   // Merges current branch with the changes of <BRANCH-NAME> branch with inline commit message
-git merge --abort 		// aborts from merge conflict to its previous state 
+git merge --abort 		// aborts from merge conflict to its previous state
 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // creates ssh key using git keygen of RSA type,4096 bit length and Comment(email) enabled
 ssh -T git@github.com         //tests connection of ssh key with github (git@github.com is generic username of github)
@@ -196,7 +196,7 @@ ATOM COMMANDS:
 atom .    	 //opens up current file directory in atom
 atom foldername     	//opens up current folder directory and subfiles in atom
 atom folder1name folder2name 	    //opens up 2 folder directory at the tree view in atom
-atom filename      	 // opens up filename in atom 
+atom filename      	 // opens up filename in atom
 
 
 
@@ -217,7 +217,7 @@ IGNORE UNWANTED FILES IN REPO:
 Create .gitignore on project directory > Add following lines-
 
 <FILE-NAME>		//ignores file-name on repo
-<FILE-DIRECTORY>	//ignore the specified folder 
+<FILE-DIRECTORY>	//ignore the specified folder
 app.log			// ignores app.log file
 *.log			//ignores all .log files
 
@@ -231,13 +231,12 @@ Available Options to resolve it -
 1. Open up the conflicting file to analyze the portion that has conflict (marked by Git automatically)
 
 2. (a) Use 'git merge --abort' to abort merging and modify one of the files
-		
+
 		-----OR-----
-   (b) 
-	(i)   Open merge tool(p4merge) using 'git mergetool' 
+   (b)
+	(i)   Open merge tool(p4merge) using 'git mergetool'
         (ii)  Analyze the remote(feature),base(original) and local(master) branch to
-              modify the final 'union file' 
+              modify the final 'union file'
 	(iii) Save it, do the final git commit to resolve the conflict
 	(iv)  Either save the 'Filename.orig' file (original file before merge)
-	      automatically added by git or remove it  
- 
+	      automatically added by git or remove it
