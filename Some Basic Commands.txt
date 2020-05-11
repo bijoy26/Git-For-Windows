@@ -61,16 +61,16 @@ git help  	// for git commands help
 git help -a 	//for listing git subcommands
 git help config  //for git configuration manual
 
-git config --global user.name "Anjum Rashid"   //saves username in global config file(system user level)
-git config --global user.email "anjum.bijoy@gmail.com" 	//saves email in global config file
-git config --global core.editor notepad 	// sets notepad as editor in global config file
-git config --global core.editor "atom --wait"   //sets atom as editor and waits for git use it as commit message editor
-git config --global alias.<Alias-Name> "<Git-Command>"   // Assigns an user defined alias for the git command specified in the string
-git config --global alias.hist "log --oneline --all --decorate --graph"	//Assigns 'Git hist' command for 'Git log --online .....'command
+git config --global user.name "Anjum Rashid"  					 //saves username in global config file(system user level)
+git config --global user.email "anjum.bijoy@gmail.com" 	 //saves email in global config file
+git config --global core.editor notepad 									// sets notepad as editor in global config file
+git config --global core.editor "atom --wait"   						//sets atom as editor and waits for git use it as commit message editor
+git config --global alias.<Alias-Name> "<Git-Command>"   		  // Assigns an user defined alias for the git command specified in the string
+git config --global alias.hist "log --oneline --all --decorate --graph"   	//Assigns 'Git hist' command for 'Git log --online .....'command
 
-git config --global diff.tool <Tool-Name>	// names Git Diff tool 'Tool-Name'
-git config --global diff.tool p4merge	    // registers Git Diff tool name 'p4merge'
-git config --global merge.tool p4merge	    // registers Git Merge tool name 'p4merge'
+git config --global diff.tool <Tool-Name>					// names Git Diff tool 'Tool-Name'
+git config --global diff.tool p4merge	    					// registers Git Diff tool name 'p4merge'
+git config --global merge.tool p4merge	  				  // registers Git Merge tool name 'p4merge'
 git config --global difftool.p4merge.path <EXE-PATH>    // sets Git Diff tool path to <EXE-PATH> for p4merge
 git config --global mergetool.p4merge.path <EXE-PATH>   // does same for Merge Tool
 git config --global difftool.p4merge.path <C:/Program Files/Perforce/p4merge.exe>  // sets Git Diff tool path to <EXE-PATH> for p4merge
