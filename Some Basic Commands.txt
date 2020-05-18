@@ -138,12 +138,12 @@ git diff origin/master	//  comparison of Working Directory/Stage and master bran
 git diff <COMMIT-ID-HASH> origin/master		//  comparison of Commit-id-1 and master branch of origin ref
 git diff <BRANCH-1> <BRANCH-2>		// comparison of Branch-1 and Branch-2 changes
 
-git diff --cached HEAD 	//  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
-git diff --cached HEAD~2   //  prints the comparison of Staging Area and HEAD minus 2 commit
-git diff --cached <COMMIT-ID-HASH>  // comparision of Staging area and specified commit
-git diff --cached origin/master	//  comparison of Staging Area and master branch of origin ref
+git diff --cached HEAD 	       //  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
+git diff --cached HEAD~2         //  prints the comparison of Staging Area and HEAD minus 2 commit
+git diff --cached <COMMIT-ID-HASH>       // comparision of Staging area and specified commit
+git diff --cached origin/master	         //  comparison of Staging Area and master branch of origin ref
 
-git difftool		// prints the comparison of Working Directory and Staging Area using p4merge tool
+git difftool		                // prints the comparison of Working Directory and Staging Area using p4merge tool
 git difftool HEAD 			// does the same as Diff
 git difftool HEAD~1 			// same
 git difftool <COMMIT-ID-HASH>		//same
