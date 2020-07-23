@@ -165,7 +165,7 @@ git branch <BRANCH-NAME>  // Creates a new branch named <BRANCH-NAME>
 git branch -m <BRANCH-NAME-1> <BRANCH-NAME-2>  // Renames <BRANCH-NAME-1> with new name <BRANCH-NAME-2>
 git branch -f <BRANCH-NAME> <COMMIT-ID>    // Moves a specified branch to point to the specified commit forcefully
 git branch -u upstream/master		// sets up current local branch to track remote branch master of upstream ref (needs upstream remote to set up first)
-git branch -d <BRANCH-NAME> 		// delete branch locally
+git branch -d <BRANCH-NAME> 		// delete the branch only if it has already been pushed and merged with the remote branch.
 
 
 git merge <BRANCH-NAME>   	 // Merges current branch with the changes of <BRANCH-NAME> branch (fast forward by default, will do Automatic Merge if both branch and master has individual commits)
