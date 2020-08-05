@@ -118,6 +118,7 @@ git log				// shows commit history
 git log -- <File-name>		// shows commit history of only the specified file
 git log --follow -- <File-name>		// shows specific commit history with rename commits(file deletion+addition)
 git log --oneline --all --decorate --graph    // displays ALL committs, each in ONE LINE , with DECORATIONS(reference names), In GRAPH format(for merges)
+git log <BRANCH-1> <BRANCH-2>	// shows the commits on branch-2 that are not on branch-1
 
 git reset HEAD -- <File-Name>	// untracks the file from working directory
 git checkout -- <File-Name>	// Reverts File back to last commited version
@@ -136,7 +137,7 @@ git diff <COMMIT-ID-HASH>      // comparison of Working Directory and specified 
 git diff <COMMIT-ID-1>..<COMMIT-ID-2>    // comparison of Commit id -1(previous) vs Commit id-2(latest)
 git diff origin/master	//  comparison of Working Directory/Stage and master branch of origin ref
 git diff <COMMIT-ID-HASH> origin/master		//  comparison of Commit-id-1 and master branch of origin ref
-git diff <BRANCH-1> <BRANCH-2>		// comparison of Branch-1 and Branch-2 changes
+git diff <BRANCH-1> <BRANCH-2>		// comparison of Branch-1 and Branch-2 changes (shows what is in branch-1 that is not in branch-2)
 
 git diff --cached HEAD 	       //  prints the comparison of Staging Area and Last Commit (--cached means Staging cache)
 git diff --cached HEAD~2         //  prints the comparison of Staging Area and HEAD minus 2 commit
