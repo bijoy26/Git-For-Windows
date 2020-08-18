@@ -98,7 +98,7 @@ git remote add <REMOTE-REF> <HTTPS-LINK/SSH-LINK>  	   // adds a remote ref (ori
 git remote add upstream <UPSTREAM-URL>			// adds a remote ref for the original repository so that it can sync between forked repository
 git remote rm <REMOTE-REF>		// removes remote ref (for shifting from remote HTTPS to SSH)
 git remote rm origin 		// removes remote ref 'origin'
-
+git remote set-url <REMOTE-NAME> <NEW-URL> [<OLD-URL>]		//updates the old fetch remote URL with new one
 
 git push <remote-repo> <branch-name>   //push to remote specified branch of origin reference
 git push origin master 		//push to remote master branch of origin reference
