@@ -106,6 +106,8 @@ git push -u origin <branch-name>       // push and sets up a tracking relationsh
 git push -u origin master       // push and sets up a tracking relationship of local and remote repo on master branch
 git push 			// pushes to origin master by default if first time previous command is executed
 git push origin --delete <remote-branch-name> 		//// delete branch remotely that is locally removed before
+git push origin --tags		// push all tags from the local to the remote 
+git push origin <TAG-ID>	// push a specified tag from local to remote
 
 git fetch --all 	// fetches all the changes from remote repo
 git fetch upstream	// fetches the upstream(original repo) branches (requires upstream remote ref to be configured)
@@ -185,8 +187,13 @@ git rebase -i <BRANCH-DEST> <BRANCH-SOURCE>	//Moves the specified changes from s
 
 git rebase -i HEAD~3	// opens up interactive UI to pick/arrange commits from the specified range to replay current branch (interactive rebase)
 
-git tag <TAG-TITLE>   // tags lastest commit with specified title
+git tag -l 				// list down all tags
+git tag <TAG-TITLE>   	// tags lastest commit with specified title (by default lightweight tag is used)
+git tag -a <TAG-TITLE>  	// tags lastest commit by using annotated tags (stores signable checksum, tagger name, email, date, tagging message etc.)
 git tag <TAG-TITLE> <COMMIT-ID>  	// tags specified commit
+git -a tag <TAG-TITLE> <COMMIT-ID> -m <TAG-MSG>		// tags (annotated) specified commit with a tag description message
+
+
 
 git describe <COMMIT-ID / BRANCH>	// shows the closed tag commit by following format : TITLE_DISTANCE_COMMIT-ID (Ex: v2_3_gC1SH)
 
