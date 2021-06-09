@@ -187,6 +187,8 @@ git rebase -i <BRANCH-DEST> <BRANCH-SOURCE>	//Moves the specified changes from s
 
 git rebase -i HEAD~3	// opens up interactive UI to pick/arrange commits from the specified range to replay current branch (interactive rebase)
 
+git commit --amend --reset-author	// replace the tip of the current branch by creating a new commit with same parents (amend) and make the author as current committer after a conflict
+
 git tag -l 				// list down all tags
 git tag <TAG-TITLE>   	// tags lastest commit with specified title (by default lightweight tag is used)
 git tag -a <TAG-TITLE>  	// tags lastest commit by using annotated tags (stores signable checksum, tagger name, email, date, tagging message etc.)
