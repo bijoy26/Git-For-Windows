@@ -120,6 +120,8 @@ git log				// shows commit history
 git log -- <File-name>		// shows commit history of only the specified file
 git log --follow -- <File-name>		// shows specific commit history with rename commits(file deletion+addition)
 git log --oneline --all --decorate --graph    // displays ALL committs, each in ONE LINE , with DECORATIONS(reference names), In GRAPH format(for merges)
+git log log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all    // coolest graph ever
+
 git log <BRANCH-1> <BRANCH-2>	// shows the commits on branch-2 that are not on branch-1
 
 git reset HEAD -- <File-Name>	// untracks the file from working directory
