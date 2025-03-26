@@ -1,3 +1,6 @@
+# Resources
+Git Tag basics - https://snehabiradar.medium.com/create-and-manage-git-tags-and-releases-in-a-repository-e356116341db
+
 VI Editor Shortcuts :
 
 VI <filename>	//opens file in VI editor
